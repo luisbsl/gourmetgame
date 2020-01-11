@@ -33,6 +33,11 @@ public class GourmetGame {
 		foodMap.put("MASSA", questions);
 	}
 
+	/**
+	 * 
+	 * Loop no mapa de tipos de comidas - foodMap
+	 * 
+	 */
 	private void askQuestions() {
 		initGame();
 
@@ -54,10 +59,19 @@ public class GourmetGame {
 		}
 	}
 
+	/**
+	 * Mensagem inicial do jogo - Pense em um prato que gosta
+	 */
 	private void initGame() {
 		new ConfirmDialog().showDialog();
 	}
 
+	/**
+	 * 
+	 * Loop na lista de pratos de uma determinada categoria de comida
+	 * cada categoria contém uma lista de pratos
+	 * 
+	 */
 	public void iterateFoodQuestions(List<ConfirmQuestionDialog> questions, final String foodType) {
 		int idx = 0;
 		do {
@@ -83,11 +97,19 @@ public class GourmetGame {
 				.showDialog("Favor entrar com um tipo de prato válido");
 	}
 
+	/**
+	 * Adiciona um novo prato a categoraia
+	 * @param foodType Categoria selecionada
+	 */
 	private void addNewQuestion(final String foodType) {
 		String food = askThoughtFood();
 		foodMap.get(foodType).add(new ConfirmQuestionDialog(food));
 	}
 
+	/**
+	 * Se não encontrar o prato que pensou o jogo sempre perguntará sobre o prato: Bolo de Chocolate
+	 * 
+	 */
 	private void askLastQuestion() {
 		final int defaultQuestion = new ConfirmQuestionDialog(QuestionDialog.defaultFood).showDialog();
 
