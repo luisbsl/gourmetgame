@@ -6,6 +6,8 @@ Jogo desenvolvido em Java Swing de perguntas e respostas sobre comida onde o pr�
 
 O último executável encontra-se na pasta **bin**
 
+File: **gourmetgame-1.0.0.jar**
+
 ## Stack
 
 * Java 8
