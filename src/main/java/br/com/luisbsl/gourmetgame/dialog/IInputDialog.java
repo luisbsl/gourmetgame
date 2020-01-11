@@ -7,6 +7,11 @@ package br.com.luisbsl.gourmetgame.dialog;
  */
 public interface IInputDialog extends IDialog {	
 	
+	/**
+	 * O sistema será encerrado sempre que o botão Close ou Cancelar for acionado
+	 * @param option
+	 * @return
+	 */
 	public default String verifyInput(final String input, final String errorMessage) {
 		if(input == null) {
 			closeProgram();
